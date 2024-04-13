@@ -1,0 +1,40 @@
+/* destop view */
+
+.desktopContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnContainer{
+    display: flex;
+    gap: 2rem;
+}
+.btnContainer>*{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.mobileContainer{
+    display: none;
+}
+
+/* mobile container */
+@media screen and (max-width : 990px) {
+        
+    .desktopContainer{
+        display: none;
+    }
+    .mobileContainer{
+        display: flex;
+        align-content: center;
+        gap: 1rem;
+        padding: 10px 20px;
+    }
+
+    .mobileContainer>*{
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+    }
+
+}

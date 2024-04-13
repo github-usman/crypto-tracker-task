@@ -1,43 +1,15 @@
-
-import React, { useState, useEffect } from 'react';
-import  fetchTopCoinsData  from '../services/api';
+import React from 'react'
+import styles from "./homePage.module.css"
+import CoinList from '../components/coin-list/CoinList'
+import Navbar from '../components/navbar/Navbar'
 
 const HomePage = () => {
-  const [coins, setCoins] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fetchTopCoinsData('inr', 10, 1);
-        setCoins(data);
-      } catch (error) {
-        setError(error);
-      }
-    };
-
-    fetchData();
-
-    // Cleanup function if needed
-    return () => {
-      // Any cleanup code
-    };
-  }, []);
-
-  if (error) return <div>Error: {error.message}</div>;
-
   return (
-    <div>
-     
-      <ul>
-        {coins.map((coin) => (
-          <li key={coin.id}>
-            {coin.name} - ${coin.current_price}
-          </li>
-        ))}
-      </ul>
+    <div className={styles.container}>
+      <Navbar />
+      <CoinList />
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
