@@ -1,9 +1,10 @@
+import HomePage from "./page/HomePage";
 
 
 function App() {
   return (
-    <div className="App">
-      <h2>Crypto Tracker</h2>
+    <div >
+      <HomePage/>
     </div>
   );
 }
