@@ -3,3 +3,41 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* carousel */
+
+/* *************** side BUTTON*************** */
+.image-slider-container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.image-slider-container .slick-prev:before,
+.image-slider-container .slick-next:before {
+  color: #A8B0C1;
+  font-size: 25px;
+}
+
+ /* ********** FOR DOTS************* */
+/* Styling for inactive dots */
+.image-slider-container .slick-dots li button:before {
+   display: none;
+} 
+
+/* Styling for active dot */
+.image-slider-container .slick-dots li.slick-active button:before {
+  display: none;
+}
+
+.image-slider-container .slick-dots li button{
+  border: .3px solid blue;
+  border-radius: 50%;
+  height: .1px;
+  width: .1px;
+
+}
+.image-slider-container .slick-dots li.slick-active button{
+  background-color: blue;
+
+}
+
