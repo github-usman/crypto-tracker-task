@@ -1,0 +1,40 @@
+.container{
+    display: flex;
+    gap:1rem;
+    margin: 1rem 0;
+}
+
+.container a{
+    font-style: none;
+    text-decoration: none;
+    font-family: Inter,sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: left;
+    color: #000000;
+}
+.container button{
+    background-color: #EFF2F5;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+}
+.container span{
+    font-size: 18px;
+    font-weight: 100;
+}
+.container button a:first-child{
+    display: flex;
+    gap: 0.3rem;
+}
+.container button:nth-child(2) a{
+    color: #3861FB;
+}
+
+
+@media screen and (max-width:990px) {
+    .container{
+        display: none;
+    }
+}

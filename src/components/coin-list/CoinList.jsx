@@ -1,6 +1,7 @@
 // src/components/CoinList/CoinList.js
 import React, { useState, useEffect } from 'react';
 import fetchTopCoinsData from '../../services/api';
+import Loading from '../loading/Loading';
 
 const CoinList = () => {
   const [coins, setCoins] = useState([]);
@@ -27,12 +28,12 @@ const CoinList = () => {
     };
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading/>;
   if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div>
-      <h1>Top 10 Coins by Market Cap (INR)</h1>
+     
       <ul>
         {coins.map((coin) => (
           <li key={coin.id}>

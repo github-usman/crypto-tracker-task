@@ -7,7 +7,7 @@ import carouselDummy from '../../assets/dummyData/carousel';
 import Slide from './slide/Slide';
 import { nanoid } from 'nanoid';
 
-export default function ImageSlider() {
+export default function Carousel() {
 
   const cardummyLen = useMemo(() => carouselDummy.length, [])
   const [slidesToShow, setSlidesToShow] = useState(3);
@@ -16,9 +16,12 @@ export default function ImageSlider() {
   //  when window size will increase or decrase using this side effect we can manipulate design of carousel using useEffect HOOK.
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 990) {
+       if (window.innerWidth < 720) {
         setSlidesToShow(1);
-      } else {
+      } 
+      else if (window.innerWidth < 990 ) {
+        setSlidesToShow(2);
+      }else {
         setSlidesToShow(cardummyLen);
       }
     };
@@ -34,8 +37,8 @@ export default function ImageSlider() {
 
 
   const settings = {
-    dots: slidesToShow === 1 ? true : false,
-    arrows: slidesToShow === 1 ? false : true,
+    dots: slidesToShow <= 2 ? true : false,
+    arrows: slidesToShow <= 2 ? false : true,
     autoplay: true,
     autoplaySpeed: 2000,
     speed: 2000,
