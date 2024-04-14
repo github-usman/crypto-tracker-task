@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
-import styles from "./homePage.module.css"
-import CoinList from '../components/crypto-currencies/coin-list/CoinList'
-import Navbar from '../components/navbar/Navbar'
+import React from 'react'
 import Carousel from '../components/carousel/Carousel'
+import CoinList from '../components/crypto-currencies/coin-list/CoinList'
 import CryptoNav from '../components/crypto-navbar/CryptoNav'
+import Navbar from '../components/navbar/Navbar'
 import Pagination from '../components/pagination/Pagination'
+import styles from "./homePage.module.css"
 
 const HomePage = () => {
-
-  const [currentPage, setCurrentPage] = useState(1);
 
   return (
     <div className={styles.container}>
@@ -19,7 +17,7 @@ const HomePage = () => {
       <CryptoNav />
       <CoinList />
       <div className={styles.paginationBtn}>
-          <Pagination setCurrentPage={setCurrentPage} currentPage={currentPage} totalPage={10} />
+          <Pagination totalPage={10} />
       </div>
     </div>
   )

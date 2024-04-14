@@ -3,16 +3,18 @@ import React, { useState, useEffect } from 'react';
 import fetchTopCoinsData from '../../../services/api';
 import Loading from '../../loading/Loading';
 import CoinListItem from "../coin-list-item/CoinListItem";
+import { usePageContext } from "../../../contexts/PageContext";
 
 const CoinList = () => {
   const [coinData, setCoinData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { currentPage } = usePageContext();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchTopCoinsData('inr', 10, 1);
+        const data = await fetchTopCoinsData('inr', 10,currentPage);
         setCoinData(data);
         setLoading(false);
       } catch (error) {
@@ -24,7 +26,7 @@ const CoinList = () => {
     fetchData();
     return () => {
     };
-  }, []);
+  }, [currentPage]);
 
   if (loading) return <Loading />;
   if (error) return <div>Error: {error.message}</div>;
