@@ -11,3 +11,15 @@
     letter-spacing: -0.03em;
     text-align: left;
 }
+
+.paginationBtn{
+    margin: 41px 0;
+    display: flex;
+    justify-content: end;
+}
+
+@media screen and (max-width:990px) {
+    .paginationBtn{
+        justify-content: center;
+    }
+}
