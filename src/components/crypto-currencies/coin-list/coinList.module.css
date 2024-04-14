@@ -1,3 +1,6 @@
+.coinTableHeadingMobile{
+  display: none;
+}
 .coinTableHeading {
     display: grid;
     grid-template-columns: 4% 11% 10% 7% 7% 15% 20% 21%; 
@@ -41,4 +44,29 @@
     color: blue;
     font-size: 15px;
     font-weight: 600;
+  }
+
+  @media screen and (max-width : 990px) {
+    .coinTableHeading{
+      display: none;
+    }
+    .coinTableHeadingMobile{
+      grid-template-columns:5% 45% 25% 25%; 
+      display: grid;
+      border-top: 0.1px solid #EFF2F5;
+      border-bottom: 0.1px solid #EFF2F5;
+      padding: 9px 0;
+      width: 98%;
+      margin: auto;
+    }
+    .coinTableHeadingMobile p {
+      text-align: left;
+      font-family: Inter,sans-serif;
+      font-weight: 700;
+      line-height: 18px;
+      font-size: 11px;
+    }
+    .alignRightH{
+      justify-content: center;
+    }
   }

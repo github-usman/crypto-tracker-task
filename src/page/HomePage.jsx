@@ -6,7 +6,6 @@ import Pagination from '../components/pagination/Pagination'
 import styles from "./homePage.module.css"
 
 const HomePage = () => {
-
   return (
     <div className={styles.container}>
       <Carousel />
@@ -14,7 +13,7 @@ const HomePage = () => {
       <CryptoNav />
       <CoinList />
       <div className={styles.paginationBtn}>
-          <Pagination totalPage={10} />
+        <Pagination totalPage={10} />
       </div>
     </div>
   )

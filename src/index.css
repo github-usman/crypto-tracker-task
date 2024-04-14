@@ -44,3 +44,36 @@
 
 }
 
+
+
+
+/* scrollbar */
+
+
+
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #A8B0C1;
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #53565e;
+}
+
+
+/* for touch screen devices */
+@media (pointer: none), (pointer: coarse) {
+
+  body{
+    margin: 5px;
+  }
+}

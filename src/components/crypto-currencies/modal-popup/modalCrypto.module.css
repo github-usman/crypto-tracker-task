@@ -1,0 +1,79 @@
+.contentModal{
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 95%;
+    max-height: 95%;
+    overflow: auto;
+}
+.contentModal p{
+    font-size: 14px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.topBar{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.topBar button{
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color:#6a6b6d;
+    font-weight: 1000;
+}
+
+.topBar p{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+/* price section */
+.lossBtn,.profitBtn{
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    color: #EA3943
+  }
+
+  .profitBtn{
+    color: #16C784
+  }
+
+  .priceSection{
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .title{
+    font-size: 12px !important;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+
+  /* loading */
+  .loadingBarParent{
+    width: 160px;
+    height: 6px;
+    background-color: #EFF2F5;
+    border-radius: 8px;
+  }
+
+  .loadingBarChild{
+    height: 100%;
+    background-color: #CFD6E4;
+    border-radius: 8px;
+    margin-top: 3px;
+  }

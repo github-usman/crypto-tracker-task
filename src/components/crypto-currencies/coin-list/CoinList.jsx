@@ -34,6 +34,7 @@ const CoinList = () => {
 
   return (
     <div>
+      {/* desktop view */}
       <div className={styles.coinTableHeading}>
         <p className={styles.indexing}>#</p>
         <p className={styles.name}>NAME</p>
@@ -43,6 +44,13 @@ const CoinList = () => {
         <p className={styles.alignRight}>MARKET CAP</p>
         <p className={styles.alignRight}>VOLUME(24H)</p>
         <p className={styles.alignRight}>CIRCULATING SUPPLY</p>
+      </div>
+      {/* mobile view */}
+      <div className={styles.coinTableHeadingMobile}>
+        <p></p>
+        <p className={styles.name}>NAME</p>
+        <p >PRICE</p>
+        <p className={styles.alignRightH}>24H <GoArrowDown className={styles.arrowIcon} /></p>
       </div>
 
       <ul>

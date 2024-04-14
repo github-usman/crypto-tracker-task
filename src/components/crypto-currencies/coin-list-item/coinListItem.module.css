@@ -1,3 +1,6 @@
+.coinTableItemsMobile{
+  display: none;
+}
 .coinTableItems {
     display: grid;
     grid-template-columns: 4% 11% 10% 7% 7% 15% 20% 21% 5%; 
@@ -70,3 +73,49 @@
     background-color: #CFD6E4;
     border-radius: 8px;
   }
+
+
+
+  @media screen and (max-width:990px) {
+    .coinTableItems{
+      display: none;
+    }
+    .coinTableItemsMobile{
+      display: grid;
+      grid-template-columns:5% 45% 25% 25%; 
+      border-bottom: 0.1px solid #EFF2F5;    
+      padding: 23px 0;
+      align-items: center; 
+      width: 98%;
+      cursor: pointer;
+      margin: auto;
+    }
+    .coinTableItemsMobile:hover{
+      background-color: #EFF2F5;
+    }
+    .coinTableItemsMobile p {
+      font-family: Inter,sans-serif;
+      text-align: left;
+      font-weight: 500;
+      font-size: 13px;
+    }
+    .lossBtn,.profitBtn{
+      justify-content: center;
+    }
+    /* modal */
+    .parentDivModal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #202020a6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden; /* Prevents background scrolling */
+  }
+  
+ 
+  }
+ 
