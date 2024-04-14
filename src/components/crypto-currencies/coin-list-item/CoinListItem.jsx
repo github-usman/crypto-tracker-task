@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { TbDotsVertical } from "react-icons/tb";
-import { usePageContext } from '../../../contexts/PageContext';
-import styles from "./coinListItem.module.css";
 import ModalCrypto from '../modal-popup/ModalCrypto';
+import styles from "./coinListItem.module.css";
+import { usePageContext } from '../../../contexts/PageContext';
 
 
 const CoinListItem = ({ coin, index }) => {
 
     const btcPercentage = (coin.circulating_supply / coin.total_supply) * 100;
     const [isOpenModal, setIsOpenModal] = useState(false)
+    const { currentPage } = usePageContext();
 
     const toggleModal = () => {
         setIsOpenModal(!isOpenModal);
@@ -20,7 +21,7 @@ const CoinListItem = ({ coin, index }) => {
         <>
             {/* destop view */}
             <div className={styles.coinTableItems}>
-                <p className={styles.indexing} ><span style={{ fontSize: "18px" }}>☆</span>{index + 1}</p>
+                <p className={styles.indexing} ><span style={{ fontSize: "18px" }}>☆</span>{((currentPage * 10) - 10) + (index + 1)}</p>  {/* change pages dynamically*/}
                 <p className={styles.name}>
                     <img src={coin.image} alt={coin.name} height={24} width={24} />
                     {coin.name} <span style={{ color: '#808A9D' }}>{(coin.symbol).toUpperCase()}</span>
@@ -43,11 +44,12 @@ const CoinListItem = ({ coin, index }) => {
                     <p style={{ color: '#86898f', fontSize: '12px' }}>{coin.high_24h} BTC</p>
                 </p>
 
-                <p className={styles.circulatingSupply}>
-                    ${(coin.circulating_supply).toFixed(2).toLocaleString()} BTC
+                <div className={styles.circulatingSupply}>
+                   <p> ${(coin.circulating_supply).toFixed(2).toLocaleString()} BTC</p>
                     <div className={styles.loadingBarParent}>
                         <div className={styles.loadingBarChild} style={{ width: btcPercentage }} ></div>
-                    </div></p>
+                    </div>
+                    </div>
                 <p style={{ textAlign: 'right', cursor: 'pointer', paddingRight: '0px' }}><TbDotsVertical size={18} /></p>
             </div>
 
@@ -73,7 +75,7 @@ const CoinListItem = ({ coin, index }) => {
             {/* modal */}
             {isOpenModal && (
                 <div className={styles.parentDivModal}>
-                          <ModalCrypto coin={coin} setIsOpenModal={setIsOpenModal}/>
+                    <ModalCrypto coin={coin} setIsOpenModal={setIsOpenModal} />
                 </div>
             )}
 

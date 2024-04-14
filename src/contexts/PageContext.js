@@ -12,18 +12,11 @@ export const PageProvider = ({ children }) => {
     setLoading(true);
     setCurrentPage(pageNumber);
   };
- 
 
-  // modal
-
-  const [isOpenModal, setIsOpenModal] = useState(false)
-    const handleOpenModal = () => {
-        setIsOpenModal(!isOpenModal);
-    }
 
 
   return (
-    <PageContext.Provider value={{ currentPage, setPageNumber, loading, setLoading,isOpenModal,handleOpenModal }}>
+    <PageContext.Provider value={{ currentPage, setPageNumber, loading, setLoading }}>
       {children}
     </PageContext.Provider>
   );

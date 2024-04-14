@@ -8,9 +8,8 @@ import { GoArrowDown } from "react-icons/go";
 
 const CoinList = () => {
   const [coinData, setCoinData] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { currentPage } = usePageContext();
+  const { currentPage,loading, setLoading } = usePageContext();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,8 +24,7 @@ const CoinList = () => {
     };
 
     fetchData();
-    return () => {
-    };
+     // eslint-disable-next-line
   }, [currentPage]);
 
   if (loading) return <Loading />;

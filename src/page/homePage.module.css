@@ -22,5 +22,8 @@
     .paginationBtn{
         justify-content: center;
     }
+    .title{
+        padding: 2rem 2px;
+    }
   
 }

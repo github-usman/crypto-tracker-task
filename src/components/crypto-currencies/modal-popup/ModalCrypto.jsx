@@ -53,11 +53,11 @@ const ModalCrypto = ({ coin, setIsOpenModal }) => {
               
                <div>
                   <p className={styles.title}>CIRCULATING SUPPLY</p>
-                  <p className={styles.circulatingSupply}>
-                    ${(coin.circulating_supply).toFixed(2).toLocaleString()} BTC
+                  <div className={styles.circulatingSupply}>
+                    <p>${(coin.circulating_supply).toFixed(2).toLocaleString()} BTC</p>
                     <div className={styles.loadingBarParent}>
                         <div className={styles.loadingBarChild} style={{ width: btcPercentage }} ></div>
-                    </div></p>
+                    </div></div>
                  </div>   
                </div>     
         </div>
