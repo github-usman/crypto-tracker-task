@@ -6,7 +6,7 @@ import hamburger_menu from '../../assets/icons/hamburger_menu.svg'
 
 const Navbar = () => {
     return (
-        <>
+        <div className={styles.container}>
             {/* destop view */}
             <div className={styles.desktopContainer}>
                 <img src={logo} width={167} height={35} alt="Crypto-Tracker logo, Track your Trade, Top 100 Cryptocurency" />
@@ -21,7 +21,7 @@ const Navbar = () => {
                 <button><img src={hamburger_menu} width={24} height={24} alt="hamburger_menu , Track your Trade, Market Cap" /></button>
                 <img src={logo} width={117} height={25} alt="Crypto-Tracker logo, Track your Trade, Top 100 Cryptocurency" />
             </div>
-        </>
+        </div>
     )
 }
 

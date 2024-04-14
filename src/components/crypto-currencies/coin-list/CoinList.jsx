@@ -4,6 +4,7 @@ import fetchTopCoinsData from '../../../services/api';
 import Loading from '../../loading/Loading';
 import CoinListItem from "../coin-list-item/CoinListItem";
 import { usePageContext } from "../../../contexts/PageContext";
+import { GoArrowDown } from "react-icons/go";
 
 const CoinList = () => {
   const [coinData, setCoinData] = useState([]);
@@ -14,7 +15,7 @@ const CoinList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchTopCoinsData('inr', 10,currentPage);
+        const data = await fetchTopCoinsData('inr', 10, currentPage);
         setCoinData(data);
         setLoading(false);
       } catch (error) {
@@ -34,18 +35,18 @@ const CoinList = () => {
   return (
     <div>
       <div className={styles.coinTableHeading}>
-        <p style={{ textAlign: 'right', paddingRight: '8px' }}>#</p>
-        <p style={{ textAlign: 'left', padding: '0 8px' }}>NAME</p>
-        <p style={{ textAlign: 'right' }}>PRICE</p>
-        <p style={{ textAlign: 'right' }}>24H</p>
-        <p style={{ textAlign: 'right' }}>7D</p>
-        <p style={{ textAlign: 'right' }}>MARKET CAP</p>
-        <p style={{ textAlign: 'right' }}>VOLUME(24H)</p>
-        <p style={{ textAlign: 'right' }}>CIRCULATING SUPPLY</p>
+        <p className={styles.indexing}>#</p>
+        <p className={styles.name}>NAME</p>
+        <p className={styles.alignRight}>PRICE</p>
+        <p className={styles.alignRightH}>24H <GoArrowDown className={styles.arrowIcon} /></p>
+        <p className={styles.alignRight}>7D</p>
+        <p className={styles.alignRight}>MARKET CAP</p>
+        <p className={styles.alignRight}>VOLUME(24H)</p>
+        <p className={styles.alignRight}>CIRCULATING SUPPLY</p>
       </div>
 
       <ul>
-        {coinData.map((coin,index) => (
+        {coinData.map((coin, index) => (
           <div key={coin.id}>
             <CoinListItem coin={coin} index={index} />
           </div>

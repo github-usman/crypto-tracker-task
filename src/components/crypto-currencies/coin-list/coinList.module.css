@@ -1,6 +1,6 @@
 .coinTableHeading {
     display: grid;
-    grid-template-columns: 4% 11% 10% 7% 7% 15% 20% 20%; 
+    grid-template-columns: 4% 11% 10% 7% 7% 15% 20% 21%; 
     border-top: 0.1px solid #EFF2F5;
     border-bottom: 0.1px solid #EFF2F5;
     padding: 9px 0;
@@ -16,3 +16,29 @@
     font-size: 11px;
   }
   
+
+  .alignRight,.indexing{
+    text-align: right !important;
+  }
+
+  .name{
+    text-align: left !important;
+    padding: 0 8px;
+  }
+
+  .indexing{
+    padding-right: 8px;
+  }
+
+  .alignRightH{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .arrowIcon{
+    color: blue;
+    font-size: 15px;
+    font-weight: 600;
+  }
