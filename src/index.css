@@ -50,9 +50,6 @@
 /* scrollbar */
 
 
-body{
-  background-color: #96969679;
-}
 
 body::-webkit-scrollbar {
   width: 5px;
