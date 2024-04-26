@@ -2,7 +2,7 @@ import styles from "./coinList.module.css";
 import React, { useState, useEffect } from 'react';
 import fetchTopCoinsData from '../../../services/api';
 import Loading from '../../loading/Loading';
-import CoinListItem from "../coin-list-item/CoinListItem";
+// import CoinListItem from "../coin-list-item/CoinListItem";
 import { usePageContext } from "../../../contexts/PageContext";
 import { GoArrowDown } from "react-icons/go";
 
