@@ -16,7 +16,7 @@ const CoinList = () => {
       try {
         const data = await fetchTopCoinsData('inr', 10, currentPage);
         setCoinData(data);
-        console.log('working')
+        // console.log('working')
         setLoading(false);
       } catch (error) {
         setError(error);
