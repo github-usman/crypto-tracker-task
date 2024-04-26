@@ -15,7 +15,6 @@ const CoinList = () => {
     const fetchData = async () => {
       try {
         const data = await fetchTopCoinsData('inr', 10, currentPage);
-        // console.log('jsdfdsf')
         setCoinData(data);
         setLoading(false);
       } catch (error) {
